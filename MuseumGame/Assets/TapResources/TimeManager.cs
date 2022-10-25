@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine.Timeline;
 
 public class TimeManager : MonoBehaviour
 {
     [SerializeField] Slider timeSlider;
+    [SerializeField] TMP_Text timeText;
     public int maxTime;
+    private bool isActive = true;
+    private int time;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,10 +22,22 @@ public class TimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeSlider.value += Time.deltaTime;
-        if(timeSlider.value >= maxTime)
+        if (isActive == true)
         {
-            timeSlider.value = 0;
+            timeSlider.value += Time.deltaTime;
+            time = (int)timeSlider.value;
+            timeText.text = time.ToString();
+            
+            if(timeSlider.value >= maxTime)
+            {
+                timeSlider.value = 0;
+            }
         }
+        
+    }
+
+    public void StopSlider()
+    {
+        isActive = false;
     }
 }
