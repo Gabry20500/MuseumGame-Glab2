@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text tapText;
     [SerializeField] TMP_Text tapRequiredText;
     [SerializeField] private int tapRequired;
-    [SerializeField] private InputManager inputManager;
+    [SerializeField] private InputManagerTapTap inputManager;
     [SerializeField] private TimeManager timeSlider;
     [SerializeField] private GameObject square;
     public Sprite newSprite;

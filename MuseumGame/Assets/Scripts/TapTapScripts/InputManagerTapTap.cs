@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputManager : MonoBehaviour
+public class InputManagerTapTap : MonoBehaviour
 {
     //Create a reference for a input controller
     private InputControls _inputControls;
