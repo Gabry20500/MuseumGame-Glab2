@@ -896,7 +896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tapText: {fileID: 1955421667}
   tapRequiredText: {fileID: 1525604374}
-  tapRequired: 25
+  tapRequired: 50
   inputManager: {fileID: 1893755765}
   timeSlider: {fileID: 1780999856}
   square: {fileID: 714435219}
@@ -1267,7 +1267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeSlider: {fileID: 1780999857}
   timeText: {fileID: 2020044893}
-  maxTime: 15
+  maxTime: 5
 --- !u!114 &1780999857
 MonoBehaviour:
   m_ObjectHideFlags: 0
