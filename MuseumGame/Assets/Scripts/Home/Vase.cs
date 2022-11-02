@@ -6,7 +6,9 @@ using UnityEngine;
 public class Vase
 {
     public string vaseName;
-    public string idCode;  
+    [TextArea(1,3)]
+    public string idCode;
+    public bool isFounded;
     
     //sprite 
     public Sprite unknown;
