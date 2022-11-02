@@ -4,9 +4,10 @@ using UnityEngine.Serialization;
 
 public class DragController : MonoBehaviour
 {
-    [FormerlySerializedAs("_selectedPiace")] public GameObject selectedPiace;
+    public GameObject selectedPiace;
     private int c = 0, OIL = 1;
     private Touch _touch;
+    
     private void Update()
     {
         DetectTouch();

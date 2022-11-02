@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using Random = UnityEngine.Random;
 
 public class PieceManager : MonoBehaviour
 {
@@ -9,39 +11,40 @@ public class PieceManager : MonoBehaviour
     public bool inRhightPosition;
     public bool selected;
     private Renderer _pieceRenderer;
-    private int _rightPositionPiece = 0;
-    
+    public int _rightPositionPieces = 0;
+    private int totalPieces = 0;
+    private EndLevelMenu _endLevelMenu;
+
     // Start is called before the first frame update
     void Start()
     {
         _pieceRenderer = new Renderer();
         _rightPosition = transform.position;
-        transform.position = new Vector3(Random.Range(2.4f,7.5f),Random.Range(9.7f,5.5f));
-        Debug.Log(_rightPosition);
+        transform.position = new Vector3(Random.Range(172f,1226f),Random.Range(1500f,500f));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, _rightPosition) < 0.5f)
+        Debug.Log(_rightPositionPieces);
+        if (Vector3.Distance(transform.position, _rightPosition) < 8f)
         {
             if (!selected)
             {
                 transform.position = _rightPosition;
                 inRhightPosition = true;
-                _pieceRenderer.sortingOrder = 0; 
-
+                
             }
         }
     }
 
     private void IncrementRightPositionPiece()
     {
-        _rightPositionPiece++;
+        _rightPositionPieces+= 1;
 
-        if (_rightPositionPiece >= 36)
+        if (_rightPositionPieces == totalPieces)
         {
-            
+            _endLevelMenu.gameIsEnded = true;
         }
     }
 }
