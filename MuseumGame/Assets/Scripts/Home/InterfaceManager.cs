@@ -1,9 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class InterfaceManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class InterfaceManager : MonoBehaviour
     //Navigate in all the page
     public int page;
     public Text pageText;
+    public GameObject playMenuPanel;
     private void Start()
     {
         DiplayVase();
@@ -26,21 +28,27 @@ public class InterfaceManager : MonoBehaviour
 
     private void UpdatePage()
     {
-        pageText.text = (page + 1) + "/" + (Mathf.Ceil(vaseSlot.Length / 4) + 1).ToString();
+        pageText.text = (page + 1) + "/" + Mathf.Ceil(vaseSlot.Length / 2).ToString();
     }
 
     private void DiplayVase() {
         for (int i = 0; i < vaseManager.vases.Count; i++)
         {
             //Assign the information to the UI
-            if (i > page * 2 && i < (page + 1) * 4)
+            if (i >= page * 2 && i < (page + 1) * 2)
             {
                 vaseSlot[i].gameObject.SetActive(true);
-                vaseSlot[i].transform.GetChild(1).transform.GetChild(0).GetComponent<Text>().text = vaseManager.vases[i].vaseName;
                 vaseSlot[i].transform.GetChild(0).GetComponent<Image>().sprite = vaseManager.vases[i].founded;
                 if (vaseManager.vases[i].isFounded)
                 {
                     vaseSlot[i].transform.GetChild(2).GetComponent<Image>().enabled = false;
+                    vaseSlot[i].transform.GetChild(1).transform.GetChild(0).GetComponent<Text>().text = vaseManager.vases[i].vaseName;
+                }
+                else
+                {
+                    vaseSlot[i].transform.GetChild(2).GetComponent<Image>().enabled = true;
+                    vaseSlot[i].transform.GetChild(1).transform.GetChild(0).GetComponent<Text>().text = "????";
+                    vaseSlot[i].transform.GetChild(3).GetComponent<Button>().onClick.AddListener(OpenPlayMenu);
                 }
             }
             else
@@ -52,7 +60,7 @@ public class InterfaceManager : MonoBehaviour
 
     public void GoNextPage()
     {
-        if(page >= Mathf.Floor((vaseManager.vases.Count -1) / 4)) 
+        if(page >= Mathf.Floor((vaseManager.vases.Count -1) / 2)) 
         {
             page = 0;
         }
@@ -69,7 +77,7 @@ public class InterfaceManager : MonoBehaviour
     {
         if (page <= 0)
         {
-            page = Mathf.FloorToInt((vaseManager.vases.Count - 1) / 4);
+            page = Mathf.FloorToInt((vaseManager.vases.Count - 1) / 2);
         }
         else
         {
@@ -77,5 +85,36 @@ public class InterfaceManager : MonoBehaviour
         }
         Debug.Log(page);
         DiplayVase();
+    }
+
+    
+    //Manage the menu for play a game
+    private void OpenPlayMenu()
+    {
+        playMenuPanel.SetActive(true);
+    }
+
+    public void ClosePlayMenu()
+    {
+        playMenuPanel.SetActive(false);
+    }
+
+    public void PlayNewGame()
+    {
+        int randomNum;
+
+        randomNum = Random.Range(1, 3);
+        switch (randomNum)
+        {
+            case 1:
+                SceneManager.LoadScene("PuzzleGame");
+                 break;
+            case 2:
+                SceneManager.LoadScene("TapTapGame");
+                break;
+            case 3:
+                Debug.Log("Third minigame");
+                break;
+        }
     }
 }

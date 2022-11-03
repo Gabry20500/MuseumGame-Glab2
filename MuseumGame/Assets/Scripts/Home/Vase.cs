@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class Vase
@@ -13,4 +14,7 @@ public class Vase
     //sprite 
     public Sprite unknown;
     public Sprite founded;
+    
+    //Butto
+    public Button playGame;
 }
