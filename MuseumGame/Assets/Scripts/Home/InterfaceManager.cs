@@ -16,6 +16,7 @@ public class InterfaceManager : MonoBehaviour
     public int page;
     public Text pageText;
     public GameObject playMenuPanel;
+    public GameObject viewMenuPanel;
     private void Start()
     {
         DiplayVase();
@@ -43,6 +44,7 @@ public class InterfaceManager : MonoBehaviour
                 {
                     vaseSlot[i].transform.GetChild(2).GetComponent<Image>().enabled = false;
                     vaseSlot[i].transform.GetChild(1).transform.GetChild(0).GetComponent<Text>().text = vaseManager.vases[i].vaseName;
+                    vaseSlot[i].transform.GetChild(3).GetComponent<Button>().onClick.AddListener(OpenViewMenu);
                 }
                 else
                 {
@@ -87,7 +89,6 @@ public class InterfaceManager : MonoBehaviour
         DiplayVase();
     }
 
-    
     //Manage the menu for play a game
     private void OpenPlayMenu()
     {
@@ -98,10 +99,24 @@ public class InterfaceManager : MonoBehaviour
     {
         playMenuPanel.SetActive(false);
     }
+    
+    private void OpenViewMenu()
+    {
+        viewMenuPanel.SetActive(true);
+    }
 
+    public void CloseViewMenu()
+    {
+        viewMenuPanel.SetActive(false);
+    }
+
+    public void ViewVases()
+    {
+        SceneManager.LoadScene("3DVase");
+    }
     public void PlayNewGame()
     {
-        int randomNum;
+        int randomNum = 0;
 
         randomNum = Random.Range(1, 3);
         switch (randomNum)
