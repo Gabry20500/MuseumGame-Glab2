@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PuzzleGameManager : MonoBehaviour
 {
     public PieceManager[] pieces;
-
+    public GameObject pauseMenu;
     private int piecesNum;
     public int rightPosPiecesNum = 0;
     private bool isPossibleAddValue;
@@ -21,7 +22,7 @@ public class PuzzleGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(rightPosPiecesNum);
+        Debug.Log(piecesNum);
         for (int i = 0; i < piecesNum; i++)
         {
             Debug.Log($"Pieces {i} is {pieces[i].addedValue} and is right? > {pieces[i].inRhightPosition}");
@@ -31,10 +32,21 @@ public class PuzzleGameManager : MonoBehaviour
                     pieces[i].addedValue = true;
             }
         }
+
+        if (rightPosPiecesNum == piecesNum)
+        {
+            OpenPauseMenu();
+        }
     }
 
-    private void AddValue()
+    private void OpenPauseMenu()
     {
-        
+        pauseMenu.SetActive(true);
+    }
+
+    public void GoHome()
+    {
+        SceneManager.LoadScene("Home");
+
     }
 }
