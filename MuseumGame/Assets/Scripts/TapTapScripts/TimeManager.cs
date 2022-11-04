@@ -12,15 +12,16 @@ public class TimeManager : MonoBehaviour
     public int maxTime;
     private bool isActive = true;
     private int time;
+    public bool isTimeEnded = false;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         timeSlider.value = 0;
         timeSlider.maxValue = maxTime;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (isActive == true)
         {
@@ -30,7 +31,8 @@ public class TimeManager : MonoBehaviour
             
             if(timeSlider.value >= maxTime)
             {
-                timeSlider.value = 0;
+                StopSlider();
+                isTimeEnded = true;
             }
         }
         

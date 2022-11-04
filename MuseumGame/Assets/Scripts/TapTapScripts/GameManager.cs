@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -13,8 +15,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private InputManagerTapTap inputManager;
     [SerializeField] private TimeManager timeSlider;
     [SerializeField] private GameObject square;
+    [SerializeField] private GameObject MenuPanel;
+    [SerializeField] private GameObject WinMenu;
+    [SerializeField] private GameObject LooseMenu;
+    public TimeManager time;
     public Sprite newSprite;
-    private int tapMade = 0;
+    private int tapMaded = 0;
 
     private SpriteRenderer squareRenderer;
     
@@ -26,19 +32,27 @@ public class GameManager : MonoBehaviour
         squareRenderer = square.GetComponent<SpriteRenderer>();
         
     }
-    
+
+    private void Update()
+    {
+        if (time.isTimeEnded)
+        {
+            EndGame();
+        }
+    }
+
     public void IncrementTap()
     {
-        tapMade++;
-        tapText.text = tapMade.ToString();
-        if (tapMade >= tapRequired)
+        tapMaded++;
+        tapText.text = tapMaded.ToString();
+        if (tapMaded >= tapRequired)
         {
             LevelWin();
         }
     }
     public int GetTapMade()
     {
-        return tapMade;
+        return tapMaded;
     }
     public int GetTapReqired()
     {
@@ -48,8 +62,30 @@ public class GameManager : MonoBehaviour
     private void LevelWin()
     {
         inputManager.OnDisable();
-        tapRequiredText.text = "You Win";
         timeSlider.StopSlider();
         squareRenderer.sprite = newSprite;
+        MenuPanel.SetActive(true);
+        WinMenu.SetActive(true);
+        LooseMenu.SetActive(false);
+    }
+
+    public void EndGame()
+    {
+        if (tapMaded < tapRequired)
+        {
+            LevelLoose();
+        }
+    }
+
+    private void LevelLoose()
+    {
+        MenuPanel.SetActive(true);
+        WinMenu.SetActive(false);
+        LooseMenu.SetActive(true);
+    }
+
+    public void GoToCollection()
+    {
+        SceneManager.LoadScene("Home");
     }
 }
