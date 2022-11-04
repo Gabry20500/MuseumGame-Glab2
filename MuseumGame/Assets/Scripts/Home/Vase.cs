@@ -12,9 +12,8 @@ public class Vase
     public bool isFounded;
     
     //sprite 
-    public Sprite unknown;
     public Sprite founded;
     
-    //Butto
+    //Button
     public Button playGame;
 }
