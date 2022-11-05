@@ -22,10 +22,8 @@ public class PuzzleGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(piecesNum);
         for (int i = 0; i < piecesNum; i++)
         {
-            Debug.Log($"Pieces {i} is {pieces[i].addedValue} and is right? > {pieces[i].inRhightPosition}");
             if (pieces[i].inRhightPosition && !pieces[i].addedValue)
             {
                     rightPosPiecesNum++;

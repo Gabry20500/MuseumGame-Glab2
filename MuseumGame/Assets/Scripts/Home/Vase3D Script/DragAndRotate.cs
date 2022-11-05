@@ -49,7 +49,6 @@ public class DragAndRotate : MonoBehaviour
                     _startingPositionY = touch.position.y;
                     break;
                 case TouchPhase.Ended:
-                    Debug.Log("Touch Phase Ended.");
                     break;
             }
         }
