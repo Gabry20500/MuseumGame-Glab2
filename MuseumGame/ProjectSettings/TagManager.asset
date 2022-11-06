@@ -45,3 +45,12 @@ TagManager:
   - name: Pieces
     uniqueID: 4273180645
     locked: 0
+  - name: Background
+    uniqueID: 4092776647
+    locked: 0
+  - name: MiddleTile
+    uniqueID: 2764306489
+    locked: 0
+  - name: FrontTile
+    uniqueID: 449638951
+    locked: 0
