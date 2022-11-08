@@ -7,7 +7,8 @@ public class InputManagerTapTap : MonoBehaviour
     //Create a reference for a input controller
     private InputControls _inputControls;
 
-    [SerializeField] private GameManager _gameManager;
+    [SerializeField] private LevelTapTapManager _gameManager;
+    public GameObject box;
 
     //Inizialize the variable with a Input Controller reference
     private void Awake()
@@ -35,6 +36,7 @@ public class InputManagerTapTap : MonoBehaviour
     //On the touch call a gameManager function tu increment the number of touch
     private void StartTouch(InputAction.CallbackContext contex)
     {
+        box.GetComponent<Animation>().Play("ChestAnimation");
         _gameManager.IncrementTap();
         
     }

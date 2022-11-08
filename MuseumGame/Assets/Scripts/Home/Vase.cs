@@ -8,7 +8,8 @@ public class Vase
 {
     public string vaseName;
     [TextArea(1,3)]
-    public string idCode;
+    public string idGame;
+    public int idVase;
     public bool isFounded;
     
     //sprite 

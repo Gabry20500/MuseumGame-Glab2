@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class LevelTapTapManager : MonoBehaviour
 {
     
     [SerializeField] TMP_Text tapText;
@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject MenuPanel;
     [SerializeField] private GameObject WinMenu;
     [SerializeField] private GameObject LooseMenu;
+    [SerializeField] private GameObject Light;
     public TimeManager time;
     public Sprite newSprite;
     private int tapMaded = 0;
@@ -61,12 +62,14 @@ public class GameManager : MonoBehaviour
 
     private void LevelWin()
     {
+        
         inputManager.OnDisable();
         timeSlider.StopSlider();
         squareRenderer.sprite = newSprite;
-        MenuPanel.SetActive(true);
-        WinMenu.SetActive(true);
-        LooseMenu.SetActive(false);
+        Light.SetActive(true);
+        Light.GetComponent<Animation>().Play("LightAnimation");
+
+        StartCoroutine(PauseMenu());
     }
 
     public void EndGame()
@@ -77,7 +80,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void LevelLoose()
+    private void LevelLoose() 
     {
         MenuPanel.SetActive(true);
         WinMenu.SetActive(false);
@@ -87,5 +90,14 @@ public class GameManager : MonoBehaviour
     public void GoToCollection()
     {
         SceneManager.LoadScene("Home");
+    }
+
+    private IEnumerator PauseMenu()
+    {
+        yield return new WaitForSeconds(1.5f);
+        
+        MenuPanel.SetActive(true);
+        WinMenu.SetActive(true);
+        LooseMenu.SetActive(false);
     }
 }

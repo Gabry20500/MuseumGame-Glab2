@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
@@ -9,14 +10,16 @@ using Random = UnityEngine.Random;
 public class InterfaceManager : MonoBehaviour
 {
     //Set the UI for see the collection
-    public VaseManager vaseManager;
     public GameObject[] vaseSlot;
 
+    private string GameId;
+    
     //Navigate in all the page
     public int page;
     public Text pageText;
     public GameObject playMenuPanel;
     public GameObject viewMenuPanel;
+    
     private void Start()
     {
         DiplayVase();
@@ -33,24 +36,29 @@ public class InterfaceManager : MonoBehaviour
     }
 
     private void DiplayVase() {
-        for (int i = 0; i < vaseManager.vases.Count; i++)
+        for (int i = 0; i < VaseManager.instance.vases.Count; i++)
         {
             //Assign the information to the UI
             if (i >= page * 2 && i < (page + 1) * 2)
             {
                 vaseSlot[i].gameObject.SetActive(true);
-                vaseSlot[i].transform.GetChild(0).GetComponent<Image>().sprite = vaseManager.vases[i].founded;
-                if (vaseManager.vases[i].isFounded)
+                vaseSlot[i].transform.GetChild(0).GetComponent<Image>().sprite = VaseManager.instance.vases[i].founded;
+                VaseManager.instance.SetVase(VaseManager.instance.vases[i].idVase);
+                if (VaseManager.instance.vases[i].isFounded)
                 {
                     vaseSlot[i].transform.GetChild(2).GetComponent<Image>().enabled = false;
-                    vaseSlot[i].transform.GetChild(1).transform.GetChild(0).GetComponent<Text>().text = vaseManager.vases[i].vaseName;
-                    vaseSlot[i].transform.GetChild(3).GetComponent<Button>().onClick.AddListener(OpenViewMenu);
+                    vaseSlot[i].transform.GetChild(1).transform.GetChild(0).GetComponent<Text>().text = VaseManager.instance.vases[i].vaseName;
+                    GameId = VaseManager.instance.vases[i].idGame;
+                    vaseSlot[i].transform.GetChild(3).gameObject.SetActive(false);
+                    vaseSlot[i].transform.GetChild(4).gameObject.SetActive(true);
                 }
                 else
                 {
                     vaseSlot[i].transform.GetChild(2).GetComponent<Image>().enabled = true;
                     vaseSlot[i].transform.GetChild(1).transform.GetChild(0).GetComponent<Text>().text = "????";
-                    vaseSlot[i].transform.GetChild(3).GetComponent<Button>().onClick.AddListener(OpenPlayMenu);
+                    GameId = VaseManager.instance.vases[i].idGame;
+                    vaseSlot[i].transform.GetChild(3).gameObject.SetActive(true);
+                    vaseSlot[i].transform.GetChild(4).gameObject.SetActive(false);
                 }
             }
             else
@@ -62,7 +70,7 @@ public class InterfaceManager : MonoBehaviour
 
     public void GoNextPage()
     {
-        if(page >= Mathf.Floor((vaseManager.vases.Count -1) / 2)) 
+        if(page >= Mathf.Floor((VaseManager.instance.vases.Count -1) / 2)) 
         {
             page = 0;
         }
@@ -79,13 +87,12 @@ public class InterfaceManager : MonoBehaviour
     {
         if (page <= 0)
         {
-            page = Mathf.FloorToInt((vaseManager.vases.Count - 1) / 2);
+            page = Mathf.FloorToInt((VaseManager.instance.vases.Count - 1) / 2);
         }
         else
         {
             page--;
         }
-        Debug.Log(page);
         DiplayVase();
     }
 
@@ -93,6 +100,7 @@ public class InterfaceManager : MonoBehaviour
     private void OpenPlayMenu()
     {
         playMenuPanel.SetActive(true);
+        
     }
 
     public void ClosePlayMenu()
@@ -100,7 +108,7 @@ public class InterfaceManager : MonoBehaviour
         playMenuPanel.SetActive(false);
     }
     
-    private void OpenViewMenu()
+    public void OpenViewMenu()
     {
         viewMenuPanel.SetActive(true);
     }
@@ -116,20 +124,83 @@ public class InterfaceManager : MonoBehaviour
     }
     public void PlayNewGame()
     {
-        int randomNum = 0;
-
-        randomNum = Random.Range(1, 3);
-        switch (randomNum)
+        switch (GameId)
         {
-            case 1:
+            case "PZ":
                 SceneManager.LoadScene("PuzzleGame");
                  break;
-            case 2:
+            case "TAP":
                 SceneManager.LoadScene("TapTapGame");
                 break;
-            case 3:
+            case "EXG":
                 Debug.Log("Third minigame");
                 break;
         }
     }
+
+    public void PlayPuzzleGame (int code)
+    {
+        switch (code)
+        {
+            case 1:
+                GameId = "PZ";
+                VaseManager.instance.SetVase(1);
+                OpenPlayMenu();
+                break;
+            case 2:
+                GameId = "PZ";
+                VaseManager.instance.SetVase(2);
+                OpenPlayMenu();
+                break;
+            case 3:
+                GameId = "PZ";
+                VaseManager.instance.SetVase(3);
+                OpenPlayMenu();
+                break;
+            case 4:
+                GameId = "PZ";
+                VaseManager.instance.SetVase(4);
+                OpenPlayMenu();
+                break;
+        }
+    }
+    
+    public void PlayExcavateGame (int code)
+    {
+        switch (code)
+        {
+            case 5:
+                GameId = "EXG";
+                OpenPlayMenu();
+                break;
+            case 6:
+                GameId = "EXG";
+                OpenPlayMenu();
+                break;
+            case 7:
+                GameId = "EXG";
+                OpenPlayMenu();
+                break;
+        }
+    }
+    
+    public void PlayTapGame (int code)
+    {
+        switch (code)
+        {
+            case 8:
+                GameId = "TAP";
+                OpenPlayMenu();
+                break;
+            case 9:
+                GameId = "TAP";
+                OpenPlayMenu();
+                break;
+            case 10:
+                GameId = "TAP";
+                OpenPlayMenu();
+                break;
+        }
+    }
+
 }

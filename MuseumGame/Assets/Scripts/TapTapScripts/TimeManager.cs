@@ -8,7 +8,6 @@ using UnityEngine.Timeline;
 public class TimeManager : MonoBehaviour
 {
     [SerializeField] Slider timeSlider;
-    [SerializeField] TMP_Text timeText;
     public int maxTime;
     private bool isActive = true;
     private int time;
@@ -27,7 +26,6 @@ public class TimeManager : MonoBehaviour
         {
             timeSlider.value += Time.deltaTime;
             time = (int)timeSlider.value;
-            timeText.text = time.ToString();
             
             if(timeSlider.value >= maxTime)
             {
