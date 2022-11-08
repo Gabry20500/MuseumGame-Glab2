@@ -29,7 +29,7 @@ public class TileScript : MonoBehaviour
 
     public void SetFrontTile()
     {
-        if ( hasSeen == false)
+        if ( hasSeen == false && hasTouched == false)
         {
             hasSeen = true;
             myRenderer.sprite = frontTile;
