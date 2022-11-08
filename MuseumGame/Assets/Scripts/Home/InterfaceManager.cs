@@ -133,7 +133,7 @@ public class InterfaceManager : MonoBehaviour
                 SceneManager.LoadScene("TapTapGame");
                 break;
             case "EXG":
-                Debug.Log("Third minigame");
+                SceneManager.LoadScene("EscavatorGame");
                 break;
         }
     }

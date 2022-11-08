@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/3DVase.unity
     guid: 938805996bacaa84d809a8016e2b3944
+  - enabled: 1
+    path: Assets/Scenes/EscavatorGame.unity
+    guid: 6cbf8bc4b671ce1428cec90602c18f5d
   m_configObjects: {}
