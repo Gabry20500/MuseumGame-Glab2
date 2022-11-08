@@ -22,6 +22,8 @@ public class PuzzleGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(piecesNum);
+        Debug.Log(rightPosPiecesNum);
         for (int i = 0; i < piecesNum; i++)
         {
             if (pieces[i].inRhightPosition && !pieces[i].addedValue)
@@ -45,6 +47,8 @@ public class PuzzleGameManager : MonoBehaviour
     public void GoHome()
     {
         SceneManager.LoadScene("Home");
+        
+        VaseManager.instance.vases[VaseManager.instance.idVase - 1].isFounded = true;
 
     }
 }

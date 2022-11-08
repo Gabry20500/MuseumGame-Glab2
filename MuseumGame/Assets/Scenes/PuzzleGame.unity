@@ -159,7 +159,7 @@ MonoBehaviour:
   inRhightPosition: 0
   selected: 0
   spriteRenderer: {fileID: 432300645}
-  vaseManager: {fileID: 50161409}
+  vaseManager: {fileID: 0}
   addedValue: 0
 --- !u!61 &15016811
 BoxCollider2D:
@@ -327,7 +327,6 @@ GameObject:
   m_Component:
   - component: {fileID: 50161408}
   - component: {fileID: 50161407}
-  - component: {fileID: 50161409}
   m_Layer: 0
   m_Name: PuzzleGameManager
   m_TagString: Untagged
@@ -381,19 +380,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &50161409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50161406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caa65d4668a191d438acf4e9aa9ea0fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vases: []
 --- !u!1 &54582286
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,7 +416,7 @@ MonoBehaviour:
   inRhightPosition: 0
   selected: 0
   spriteRenderer: {fileID: 1504639152}
-  vaseManager: {fileID: 50161409}
+  vaseManager: {fileID: 0}
   addedValue: 0
 --- !u!61 &54582288
 BoxCollider2D:
@@ -692,7 +678,7 @@ MonoBehaviour:
   inRhightPosition: 0
   selected: 0
   spriteRenderer: {fileID: 1175899233}
-  vaseManager: {fileID: 50161409}
+  vaseManager: {fileID: 0}
   addedValue: 0
 --- !u!61 &163225918
 BoxCollider2D:
@@ -886,7 +872,7 @@ MonoBehaviour:
   inRhightPosition: 0
   selected: 0
   spriteRenderer: {fileID: 626874333}
-  vaseManager: {fileID: 50161409}
+  vaseManager: {fileID: 0}
   addedValue: 0
 --- !u!61 &186164640
 BoxCollider2D:
@@ -1248,7 +1234,7 @@ MonoBehaviour:
   inRhightPosition: 0
   selected: 0
   spriteRenderer: {fileID: 247314669}
-  vaseManager: {fileID: 50161409}
+  vaseManager: {fileID: 0}
   addedValue: 0
 --- !u!61 &373483777
 BoxCollider2D:
@@ -1740,7 +1726,7 @@ MonoBehaviour:
   inRhightPosition: 0
   selected: 0
   spriteRenderer: {fileID: 410927477}
-  vaseManager: {fileID: 50161409}
+  vaseManager: {fileID: 0}
   addedValue: 0
 --- !u!61 &446174691
 BoxCollider2D:
@@ -2018,7 +2004,7 @@ MonoBehaviour:
   inRhightPosition: 0
   selected: 0
   spriteRenderer: {fileID: 1961372342}
-  vaseManager: {fileID: 50161409}
+  vaseManager: {fileID: 0}
   addedValue: 0
 --- !u!61 &552875161
 BoxCollider2D:
@@ -2361,7 +2347,7 @@ MonoBehaviour:
   inRhightPosition: 0
   selected: 0
   spriteRenderer: {fileID: 1203816465}
-  vaseManager: {fileID: 50161409}
+  vaseManager: {fileID: 0}
   addedValue: 0
 --- !u!61 &618223265
 BoxCollider2D:
@@ -2807,7 +2793,7 @@ MonoBehaviour:
   inRhightPosition: 0
   selected: 0
   spriteRenderer: {fileID: 1767121411}
-  vaseManager: {fileID: 50161409}
+  vaseManager: {fileID: 0}
   addedValue: 0
 --- !u!61 &680855470
 BoxCollider2D:
@@ -3099,7 +3085,7 @@ MonoBehaviour:
   inRhightPosition: 0
   selected: 0
   spriteRenderer: {fileID: 1170181020}
-  vaseManager: {fileID: 50161409}
+  vaseManager: {fileID: 0}
   addedValue: 0
 --- !u!61 &893111640
 BoxCollider2D:
@@ -3373,7 +3359,7 @@ MonoBehaviour:
   inRhightPosition: 0
   selected: 0
   spriteRenderer: {fileID: 669159546}
-  vaseManager: {fileID: 50161409}
+  vaseManager: {fileID: 0}
   addedValue: 0
 --- !u!61 &1051691440
 BoxCollider2D:
@@ -3567,7 +3553,7 @@ MonoBehaviour:
   inRhightPosition: 0
   selected: 0
   spriteRenderer: {fileID: 2072800635}
-  vaseManager: {fileID: 50161409}
+  vaseManager: {fileID: 0}
   addedValue: 0
 --- !u!61 &1105320030
 BoxCollider2D:
@@ -3761,7 +3747,7 @@ MonoBehaviour:
   inRhightPosition: 0
   selected: 0
   spriteRenderer: {fileID: 219884145}
-  vaseManager: {fileID: 50161409}
+  vaseManager: {fileID: 0}
   addedValue: 0
 --- !u!61 &1159159016
 BoxCollider2D:
@@ -4291,7 +4277,7 @@ MonoBehaviour:
   inRhightPosition: 0
   selected: 0
   spriteRenderer: {fileID: 1748389978}
-  vaseManager: {fileID: 50161409}
+  vaseManager: {fileID: 0}
   addedValue: 0
 --- !u!61 &1541696014
 BoxCollider2D:
@@ -4485,7 +4471,7 @@ MonoBehaviour:
   inRhightPosition: 0
   selected: 0
   spriteRenderer: {fileID: 632783345}
-  vaseManager: {fileID: 50161409}
+  vaseManager: {fileID: 0}
   addedValue: 0
 --- !u!61 &1562335212
 BoxCollider2D:
@@ -4864,7 +4850,7 @@ MonoBehaviour:
   inRhightPosition: 0
   selected: 0
   spriteRenderer: {fileID: 1601938420}
-  vaseManager: {fileID: 50161409}
+  vaseManager: {fileID: 0}
   addedValue: 0
 --- !u!61 &1721833449
 BoxCollider2D:

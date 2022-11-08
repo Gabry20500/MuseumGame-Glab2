@@ -1,11 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using Random = UnityEngine.Random;
 
 public class InterfaceManager : MonoBehaviour
 {
@@ -190,14 +185,17 @@ public class InterfaceManager : MonoBehaviour
         {
             case 8:
                 GameId = "TAP";
+                VaseManager.instance.SetVase(8);
                 OpenPlayMenu();
                 break;
             case 9:
                 GameId = "TAP";
+                VaseManager.instance.SetVase(9);
                 OpenPlayMenu();
                 break;
             case 10:
                 GameId = "TAP";
+                VaseManager.instance.SetVase(10);
                 OpenPlayMenu();
                 break;
         }

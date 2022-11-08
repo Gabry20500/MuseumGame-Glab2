@@ -23,10 +23,9 @@ public class PieceManager : MonoBehaviour
     void Start()
     {
         spriteRenderer.sprite = VaseManager.instance.activeSprite;
-        Debug.Log(VaseManager.instance.idVase);
         _pieceRenderer = new Renderer();
         _rightPosition = transform.position;
-        //transform.position = new Vector3(Random.Range(172f,1226f),Random.Range(1500f,500f));
+        transform.position = new Vector3(Random.Range(172f,1226f),Random.Range(1500f,500f));
     }
 
     // Update is called once per frame
@@ -41,10 +40,5 @@ public class PieceManager : MonoBehaviour
             }
         }
     }
-
-    private IEnumerator changeSprite()
-    {
-        
-        yield return null;
-    }
+    
 }
