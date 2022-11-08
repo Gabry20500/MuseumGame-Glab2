@@ -15,8 +15,17 @@ EditorUserSettings:
       value: 5300515754020b5a0f0c5e2114760944414e4d7f7c7d7e667e704a35b6e4666b
       flags: 0
     RecentlyUsedSceneGuid-3:
+      value: 5300515754020b5a0f0c5e2114760944414e4d7f7c7d7e667e704a35b6e4666b
+      flags: 0
+<<<<<<< Updated upstream
+=======
+    RecentlyUsedSceneGuid-4:
       value: 555256005d570a0f0f585b7313260e44444f1b2f2f7176667d7b1e62bae6613c
       flags: 0
+    UnityRemoteDevice:
+      value: 225f4d46245b0d4902070862342649191512
+      flags: 0
+>>>>>>> Stashed changes
     vcSharedLogLevel:
       value: 0d5e400f0650
       flags: 0
