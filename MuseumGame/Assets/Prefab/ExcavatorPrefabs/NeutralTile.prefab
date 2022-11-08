@@ -64,6 +64,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6562979809384473768, guid: 1c21ed2a82d7002409afb7da8eea6551, type: 3}
+      propertyPath: myType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6562979809384473768, guid: 1c21ed2a82d7002409afb7da8eea6551, type: 3}
       propertyPath: scorpio
       value: 1
       objectReference: {fileID: 0}

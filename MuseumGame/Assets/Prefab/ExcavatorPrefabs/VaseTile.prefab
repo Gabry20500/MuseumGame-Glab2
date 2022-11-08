@@ -56,9 +56,21 @@ PrefabInstance:
       value: VaseTile
       objectReference: {fileID: 0}
     - target: {fileID: 7717694038717144596, guid: 9eeebcd6816e4fa4e9018e9695b6df8b, type: 3}
+      propertyPath: myType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717694038717144596, guid: 9eeebcd6816e4fa4e9018e9695b6df8b, type: 3}
       propertyPath: scorpio
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7717694038717144596, guid: 9eeebcd6816e4fa4e9018e9695b6df8b, type: 3}
+      propertyPath: frontTile
+      value: 
+      objectReference: {fileID: 21300000, guid: ee08aaaeaea1afe4db4be12af4f0c9cd, type: 3}
+    - target: {fileID: 7717694038717144596, guid: 9eeebcd6816e4fa4e9018e9695b6df8b, type: 3}
+      propertyPath: excavatedTile
+      value: 
+      objectReference: {fileID: 21300000, guid: 8fccfd9d3afb2fd43b4a3c00a2ea5937, type: 3}
     - target: {fileID: 7717694038717144596, guid: 9eeebcd6816e4fa4e9018e9695b6df8b, type: 3}
       propertyPath: itemSprite.Array.size
       value: 3
