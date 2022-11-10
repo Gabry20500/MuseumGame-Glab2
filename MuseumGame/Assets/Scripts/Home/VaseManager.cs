@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VaseManager : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class VaseManager : MonoBehaviour
     public Sprite[] puzzleSprite;
     public int idVase { get; private set; }
     public Sprite activeSprite { get; private set; }
-
+    public bool remaning = true;
+    public bool qualcosa = false;
 
     private void Awake()
     {

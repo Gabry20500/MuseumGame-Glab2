@@ -3693,43 +3693,43 @@ MonoBehaviour:
   - vaseName: Skyphos
     idGame: PZ
     idVase: 1
-    isFounded: 1
+    isFounded: 0
     founded: {fileID: 21300000, guid: 939a312451aa04e44aae845ae3668082, type: 3}
     playGame: {fileID: 0}
   - vaseName: Kylix
     idGame: PZ
     idVase: 2
-    isFounded: 1
+    isFounded: 0
     founded: {fileID: 21300000, guid: 791d1a73f2596dc489a38f4337f26384, type: 3}
     playGame: {fileID: 0}
   - vaseName: Idra
     idGame: PZ
     idVase: 3
-    isFounded: 1
+    isFounded: 0
     founded: {fileID: 21300000, guid: a9eee8cc2ba7885429ae8e9944001e4d, type: 3}
     playGame: {fileID: 0}
   - vaseName: Aryballos
     idGame: PZ
     idVase: 4
-    isFounded: 1
+    isFounded: 0
     founded: {fileID: 21300000, guid: ef2e0b258a9ae53479ca77b3967f0eb6, type: 3}
     playGame: {fileID: 0}
   - vaseName: Anfora
     idGame: EXG
     idVase: 5
-    isFounded: 1
+    isFounded: 0
     founded: {fileID: 21300000, guid: 0aadd558a4878bb4cab6a6ea166f437d, type: 3}
     playGame: {fileID: 0}
   - vaseName: Cratere
     idGame: EXG
     idVase: 6
-    isFounded: 1
+    isFounded: 0
     founded: {fileID: 21300000, guid: 98b002e9eaa78944daf24e7fd39325be, type: 3}
     playGame: {fileID: 0}
   - vaseName: Oinochoe
     idGame: EXG
     idVase: 7
-    isFounded: 1
+    isFounded: 0
     founded: {fileID: 21300000, guid: db5c759d7f042c743bc4355377467fc0, type: 3}
     playGame: {fileID: 0}
   - vaseName: Collection 1
@@ -3758,6 +3758,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7ffe586caa088d24c9887a1993e6b350, type: 3}
   - {fileID: 21300000, guid: 3a67f4112a3fbee4caed88337620823a, type: 3}
   - {fileID: 21300000, guid: f3900782b16b5c54988650a9cf727439, type: 3}
+  remaning: 1
+  qualcosa: 0
 --- !u!4 &1752761244
 Transform:
   m_ObjectHideFlags: 0

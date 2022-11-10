@@ -313,6 +313,7 @@ public class ExcavatorManager : MonoBehaviour
     {
         gameStopped = true;
         gameWinUI.SetActive(true);
+        Debug.Log(VaseManager.instance.idVase);
         VaseManager.instance.vases[VaseManager.instance.idVase - 1].isFounded = true;
     }
 

@@ -25,8 +25,6 @@ public class DragController : MonoBehaviour
                 }
             }
             c = 1;
-            
-            //Input.GetTouch(0).position
         }else 
         if (Input.GetMouseButtonDown(0)) {
             

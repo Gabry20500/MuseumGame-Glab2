@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -16,7 +17,9 @@ public class InterfaceManager : MonoBehaviour
     public GameObject viewMenuPanel;
     public GameObject playButton;
     public GameObject viewButton;
-    
+
+    private int countWin;
+
     private void Start()
     {
         DiplayVase();
@@ -25,6 +28,27 @@ public class InterfaceManager : MonoBehaviour
     private void Update()
     {
         UpdatePage();
+
+        for (int i = 0; i < VaseManager.instance.vases.Count; i++)
+        {
+            if (VaseManager.instance.vases[i].isFounded)
+            {
+                countWin++;
+            }
+        }
+
+        if (countWin == 10)
+        {
+            if (!VaseManager.instance.qualcosa)
+            {
+                VaseManager.instance.remaning = false;
+                VaseManager.instance.qualcosa = true;
+                if (!VaseManager.instance.remaning)
+                {
+                    SceneManager.LoadScene("EndLevel");
+                }
+            }
+        }
     }
 
     private void UpdatePage()
@@ -45,7 +69,6 @@ public class InterfaceManager : MonoBehaviour
                 {
                     vaseSlot[i].transform.GetChild(2).GetComponent<Image>().enabled = false;
                     vaseSlot[i].transform.GetChild(1).transform.GetChild(0).GetComponent<Text>().text = VaseManager.instance.vases[i].vaseName;
-                    GameId = VaseManager.instance.vases[i].idGame;
                     vaseSlot[i].transform.GetChild(3).gameObject.SetActive(false);
                     vaseSlot[i].transform.GetChild(4).gameObject.SetActive(true);
                 }
@@ -53,7 +76,6 @@ public class InterfaceManager : MonoBehaviour
                 {
                     vaseSlot[i].transform.GetChild(2).GetComponent<Image>().enabled = true;
                     vaseSlot[i].transform.GetChild(1).transform.GetChild(0).GetComponent<Text>().text = "????";
-                    GameId = VaseManager.instance.vases[i].idGame;
                     vaseSlot[i].transform.GetChild(3).gameObject.SetActive(true);
                     vaseSlot[i].transform.GetChild(4).gameObject.SetActive(false);
                 }
@@ -96,6 +118,7 @@ public class InterfaceManager : MonoBehaviour
     private void OpenPlayMenu()
     {
         playMenuPanel.SetActive(true);
+        Debug.Log(VaseManager.instance.idVase);
     }
 
     public void ClosePlayMenu()
@@ -203,14 +226,17 @@ public class InterfaceManager : MonoBehaviour
         {
             case 5:
                 GameId = "EXG";
+                VaseManager.instance.SetVase(5);
                 OpenPlayMenu();
                 break;
             case 6:
                 GameId = "EXG";
+                VaseManager.instance.SetVase(6);
                 OpenPlayMenu();
                 break;
             case 7:
                 GameId = "EXG";
+                VaseManager.instance.SetVase(7);
                 OpenPlayMenu();
                 break;
         }
