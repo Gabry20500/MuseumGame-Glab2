@@ -10,41 +10,41 @@ public class PieceManager : MonoBehaviour
     Vector3 _rightPosition;
     public bool inRhightPosition;
     public bool selected;
+    
+    //Scene Reference 
     private Renderer _pieceRenderer;
-    public int _rightPositionPieces = 0;
-    private int totalPieces = 0;
+    public SpriteRenderer spriteRenderer;
+    public VaseManager vaseManager;
+    
+    public bool addedValue;
     private EndLevelMenu _endLevelMenu;
 
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer.sprite = VaseManager.instance.activeSprite;
+        Debug.Log(VaseManager.instance.idVase);
         _pieceRenderer = new Renderer();
         _rightPosition = transform.position;
-        transform.position = new Vector3(Random.Range(172f,1226f),Random.Range(1500f,500f));
+        //transform.position = new Vector3(Random.Range(172f,1226f),Random.Range(1500f,500f));
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(_rightPositionPieces);
         if (Vector3.Distance(transform.position, _rightPosition) < 8f)
         {
             if (!selected)
             {
                 transform.position = _rightPosition;
                 inRhightPosition = true;
-                
             }
         }
     }
 
-    private void IncrementRightPositionPiece()
+    private IEnumerator changeSprite()
     {
-        _rightPositionPieces+= 1;
-
-        if (_rightPositionPieces == totalPieces)
-        {
-            _endLevelMenu.gameIsEnded = true;
-        }
+        
+        yield return null;
     }
 }

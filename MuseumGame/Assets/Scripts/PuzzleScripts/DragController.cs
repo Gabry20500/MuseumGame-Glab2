@@ -10,9 +10,10 @@ public class DragController : MonoBehaviour
     
     private void Update()
     {
-        DetectTouch();
-        
-        if (_touch.phase == TouchPhase.Began) {
+
+        if (Input.touchCount > 0) {
+            
+            _touch = Input.GetTouch(0);
             
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(_touch.position), Vector2.zero);
             if (hit.transform.CompareTag("Puzzle"))
@@ -43,13 +44,11 @@ public class DragController : MonoBehaviour
             c = 2;
             
         }
-        
-        
 
         switch (c)
         {
             case 1: 
-                if (_touch.phase == TouchPhase.Ended)
+                if (Input.touchCount == 0)
                 {
                     if (selectedPiace != null)
                     {
@@ -81,15 +80,6 @@ public class DragController : MonoBehaviour
                     selectedPiace.transform.position = new Vector3(mousePos.x, mousePos.y,0);
                 }
                 break;
-        }
-        
-    }
-
-    private void DetectTouch()
-    {
-        if (Input.touchCount > 0)
-        {
-            _touch = Input.GetTouch(0);
         }
     }
 }
