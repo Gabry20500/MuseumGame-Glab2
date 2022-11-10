@@ -27,6 +27,10 @@ public class ExcavatorManager : MonoBehaviour
 
     private Touch touch;
 
+    [SerializeField] GameObject gameOverUI;
+    [SerializeField] GameObject gameWinUI;
+    public bool gameStopped = false;
+
   
 
     private void Awake()
@@ -47,26 +51,29 @@ public class ExcavatorManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.touchCount > 0)
+        if (gameStopped == false)
         {
-            touch = Input.GetTouch(0);
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(touch.position), Vector2.zero);
-            if(hit.transform.CompareTag("Tile"))
+            if (Input.touchCount > 0)
             {
-                for (int row = 0; row <= 5; row++)
+                touch = Input.GetTouch(0);
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(touch.position), Vector2.zero);
+                if (hit.transform.CompareTag("Tile"))
                 {
-                    for (int column = 0; column <= 4; column++)
+                    for (int row = 0; row <= 5; row++)
                     {
-                        if(hit.transform.gameObject == tileMap[row][column].tile)
+                        for (int column = 0; column <= 4; column++)
                         {
-                            tileMap[row][column].tile.GetComponent<TileScript>().SetExcavatedTile();
-                            foreach(Tile tile in tileMap[row][column].adiacent)
+                            if (hit.transform.gameObject == tileMap[row][column].tile)
                             {
-                                tile.tile.GetComponent<TileScript>().SetFrontTile();
+                                tileMap[row][column].tile.GetComponent<TileScript>().SetExcavatedTile();
+                                foreach (Tile tile in tileMap[row][column].adiacent)
+                                {
+                                    tile.tile.GetComponent<TileScript>().SetFrontTile();
+                                }
                             }
                         }
-                    }                   
-                }          
+                    }
+                }
             }
         }
     }
@@ -289,7 +296,8 @@ public class ExcavatorManager : MonoBehaviour
 
     private void GameOver()
     {
-
+        gameStopped = true;
+        gameOverUI.SetActive(true);
     }
 
     public void VaseFounded()
@@ -303,7 +311,9 @@ public class ExcavatorManager : MonoBehaviour
 
     private void LevelWin()
     {
-       
+        gameStopped = true;
+        gameWinUI.SetActive(true);
+        VaseManager.instance.vases[VaseManager.instance.idVase - 1].isFounded = true;
     }
 
 
