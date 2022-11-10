@@ -58,6 +58,7 @@ public class VaseManager : MonoBehaviour
                 activeSprite = puzzleSprite[6];
                 break;
         }
+        
     }
 
 }

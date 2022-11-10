@@ -6,7 +6,6 @@ public class DragAndRotate : MonoBehaviour
 {
 
     public float rotationSpeed = 1000f;
-
     private float _startingPositionX;
     private float _startingPositionY;
 

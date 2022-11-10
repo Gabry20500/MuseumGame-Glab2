@@ -66,7 +66,9 @@ public class LevelTapTapManager : MonoBehaviour
 
     private void LevelWin()
     {
-        
+        slider.SetActive(false);
+        tapText.SetText("");
+        tapRequiredText.SetText("");
         inputManager.OnDisable();
         timeSlider.StopSlider();
         squareRenderer.sprite = newSprite;
@@ -87,6 +89,9 @@ public class LevelTapTapManager : MonoBehaviour
 
     private void LevelLoose() 
     {
+        slider.SetActive(false);
+        tapText.SetText("");
+        tapRequiredText.SetText("");
         MenuPanel.SetActive(true);
         WinMenu.SetActive(false);
         LooseMenu.SetActive(true);

@@ -14,6 +14,8 @@ public class InterfaceManager : MonoBehaviour
     public Text pageText;
     public GameObject playMenuPanel;
     public GameObject viewMenuPanel;
+    public GameObject playButton;
+    public GameObject viewButton;
     
     private void Start()
     {
@@ -74,7 +76,6 @@ public class InterfaceManager : MonoBehaviour
             page++;
         }
 
-        Debug.Log(page);
         DiplayVase();
     }
 
@@ -95,7 +96,6 @@ public class InterfaceManager : MonoBehaviour
     private void OpenPlayMenu()
     {
         playMenuPanel.SetActive(true);
-        
     }
 
     public void ClosePlayMenu()
@@ -103,8 +103,36 @@ public class InterfaceManager : MonoBehaviour
         playMenuPanel.SetActive(false);
     }
     
-    public void OpenViewMenu()
+    public void OpenViewMenu(int code)
     {
+        playButton.GetComponent<Animation>().Play("PanelAnimation");
+        playButton.GetComponent<Animation>().Play("ButtonAnimation");
+        playButton.GetComponent<Animation>().Play("XAnimation");
+        
+        switch (code)
+        {
+            case 1:
+                VaseManager.instance.SetVase(1);
+                break;
+            case 2:
+                VaseManager.instance.SetVase(2);
+                break;
+            case 3:
+                VaseManager.instance.SetVase(3);
+                break;
+            case 4:
+                VaseManager.instance.SetVase(4);
+                break;
+            case 5:
+                VaseManager.instance.SetVase(5);
+                break;
+            case 6:
+                VaseManager.instance.SetVase(6);
+                break;
+            case 7:
+                VaseManager.instance.SetVase(7);
+                break;
+        }
         viewMenuPanel.SetActive(true);
     }
 
@@ -115,6 +143,7 @@ public class InterfaceManager : MonoBehaviour
 
     public void ViewVases()
     {
+        //viewButton.GetComponent<Animation>().Play("ChestAnimation");
         SceneManager.LoadScene("3DVase");
     }
     public void PlayNewGame()
@@ -135,6 +164,10 @@ public class InterfaceManager : MonoBehaviour
 
     public void PlayPuzzleGame (int code)
     {
+        playButton.GetComponent<Animation>().Play("PanelAnimation");
+        playButton.GetComponent<Animation>().Play("ButtonAnimation");
+        playButton.GetComponent<Animation>().Play("XAnimation");
+        
         switch (code)
         {
             case 1:
@@ -162,6 +195,10 @@ public class InterfaceManager : MonoBehaviour
     
     public void PlayExcavateGame (int code)
     {
+        playButton.GetComponent<Animation>().Play("PanelAnimation");
+        playButton.GetComponent<Animation>().Play("ButtonAnimation");
+        playButton.GetComponent<Animation>().Play("XAnimation");
+        
         switch (code)
         {
             case 5:
@@ -181,6 +218,10 @@ public class InterfaceManager : MonoBehaviour
     
     public void PlayTapGame (int code)
     {
+        playButton.GetComponent<Animation>().Play("PanelAnimation");
+        playButton.GetComponent<Animation>().Play("ButtonAnimation");
+        playButton.GetComponent<Animation>().Play("XAnimation");
+        
         switch (code)
         {
             case 8:
