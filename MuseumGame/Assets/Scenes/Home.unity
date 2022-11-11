@@ -520,7 +520,6 @@ GameObject:
   - component: {fileID: 304752599}
   - component: {fileID: 304752598}
   - component: {fileID: 304752597}
-  - component: {fileID: 304752600}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -642,22 +641,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304752595}
   m_CullTransparentMesh: 1
---- !u!111 &304752600
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 304752595}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 9e42d75834d056d4c97cde75471392b2, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 9e42d75834d056d4c97cde75471392b2, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &354600968
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,7 +963,6 @@ GameObject:
   - component: {fileID: 398919437}
   - component: {fileID: 398919436}
   - component: {fileID: 398919435}
-  - component: {fileID: 398919438}
   m_Layer: 5
   m_Name: ViewButton
   m_TagString: Untagged
@@ -1102,22 +1084,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 398919433}
   m_CullTransparentMesh: 1
---- !u!111 &398919438
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398919433}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: a20e70a68e974a647b6fb86060e8c9da, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: a20e70a68e974a647b6fb86060e8c9da, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1001 &519732408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1345,7 +1311,6 @@ GameObject:
   - component: {fileID: 708399377}
   - component: {fileID: 708399376}
   - component: {fileID: 708399375}
-  - component: {fileID: 708399378}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -1467,22 +1432,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708399373}
   m_CullTransparentMesh: 1
---- !u!111 &708399378
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708399373}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 9e42d75834d056d4c97cde75471392b2, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 9e42d75834d056d4c97cde75471392b2, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &790722017
 GameObject:
   m_ObjectHideFlags: 0
@@ -2936,6 +2885,7 @@ MonoBehaviour:
   - {fileID: 994322595}
   - {fileID: 1621047972}
   - {fileID: 932865977}
+  pos: 0
   page: 0
   pageText: {fileID: 90709240}
   playMenuPanel: {fileID: 1909160749}
@@ -3087,7 +3037,6 @@ GameObject:
   - component: {fileID: 1558095636}
   - component: {fileID: 1558095635}
   - component: {fileID: 1558095634}
-  - component: {fileID: 1558095637}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -3209,22 +3158,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558095632}
   m_CullTransparentMesh: 1
---- !u!111 &1558095637
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558095632}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: a20e70a68e974a647b6fb86060e8c9da, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: a20e70a68e974a647b6fb86060e8c9da, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &1585167858 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5997409277664498161, guid: a474d20206465a34aad1bf7b296cc57e, type: 3}
@@ -4093,7 +4026,6 @@ GameObject:
   - component: {fileID: 1909160750}
   - component: {fileID: 1909160752}
   - component: {fileID: 1909160751}
-  - component: {fileID: 1909160753}
   m_Layer: 5
   m_Name: PlayPanel
   m_TagString: Untagged
@@ -4161,22 +4093,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909160749}
   m_CullTransparentMesh: 1
---- !u!111 &1909160753
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1909160749}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 303844b199281e041a26ee903caed420, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 303844b199281e041a26ee903caed420, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &1953753781
 GameObject:
   m_ObjectHideFlags: 0
@@ -4188,7 +4104,6 @@ GameObject:
   - component: {fileID: 1953753782}
   - component: {fileID: 1953753784}
   - component: {fileID: 1953753783}
-  - component: {fileID: 1953753785}
   m_Layer: 5
   m_Name: ViewMenu
   m_TagString: Untagged
@@ -4256,22 +4171,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953753781}
   m_CullTransparentMesh: 1
---- !u!111 &1953753785
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1953753781}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 303844b199281e041a26ee903caed420, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 303844b199281e041a26ee903caed420, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1001 &1967142085
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,7 +7,6 @@ public class Return : MonoBehaviour
 {
     public void ReturnAtHome()
     {
-        VaseManager.instance.remaning = true;
         SceneManager.LoadScene("Home");
     }
 }

@@ -11,44 +11,31 @@ public class InterfaceManager : MonoBehaviour
     private string GameId;
     
     //Navigate in all the page
+    public int pos;
     public int page;
     public Text pageText;
     public GameObject playMenuPanel;
     public GameObject viewMenuPanel;
     public GameObject playButton;
     public GameObject viewButton;
-
-    private int countWin;
-
+    
     private void Start()
     {
         DiplayVase();
+
+        pos = EndGame(true);
+        
+        Debug.Log(VaseManager.instance.remaning); 
+        if (pos == 10 && VaseManager.instance.remaning)
+        {
+            SceneManager.LoadScene("EndLevel");
+            VaseManager.instance.remaning = false;
+        }
     }
 
     private void Update()
     {
         UpdatePage();
-
-        for (int i = 0; i < VaseManager.instance.vases.Count; i++)
-        {
-            if (VaseManager.instance.vases[i].isFounded)
-            {
-                countWin++;
-            }
-        }
-
-        if (countWin == 10)
-        {
-            if (!VaseManager.instance.qualcosa)
-            {
-                VaseManager.instance.remaning = false;
-                VaseManager.instance.qualcosa = true;
-                if (!VaseManager.instance.remaning)
-                {
-                    SceneManager.LoadScene("EndLevel");
-                }
-            }
-        }
     }
 
     private void UpdatePage()
@@ -118,7 +105,6 @@ public class InterfaceManager : MonoBehaviour
     private void OpenPlayMenu()
     {
         playMenuPanel.SetActive(true);
-        Debug.Log(VaseManager.instance.idVase);
     }
 
     public void ClosePlayMenu()
@@ -128,9 +114,6 @@ public class InterfaceManager : MonoBehaviour
     
     public void OpenViewMenu(int code)
     {
-        playButton.GetComponent<Animation>().Play("PanelAnimation");
-        playButton.GetComponent<Animation>().Play("ButtonAnimation");
-        playButton.GetComponent<Animation>().Play("XAnimation");
         
         switch (code)
         {
@@ -166,7 +149,6 @@ public class InterfaceManager : MonoBehaviour
 
     public void ViewVases()
     {
-        //viewButton.GetComponent<Animation>().Play("ChestAnimation");
         SceneManager.LoadScene("3DVase");
     }
     public void PlayNewGame()
@@ -187,10 +169,6 @@ public class InterfaceManager : MonoBehaviour
 
     public void PlayPuzzleGame (int code)
     {
-        playButton.GetComponent<Animation>().Play("PanelAnimation");
-        playButton.GetComponent<Animation>().Play("ButtonAnimation");
-        playButton.GetComponent<Animation>().Play("XAnimation");
-        
         switch (code)
         {
             case 1:
@@ -218,10 +196,6 @@ public class InterfaceManager : MonoBehaviour
     
     public void PlayExcavateGame (int code)
     {
-        playButton.GetComponent<Animation>().Play("PanelAnimation");
-        playButton.GetComponent<Animation>().Play("ButtonAnimation");
-        playButton.GetComponent<Animation>().Play("XAnimation");
-        
         switch (code)
         {
             case 5:
@@ -244,10 +218,6 @@ public class InterfaceManager : MonoBehaviour
     
     public void PlayTapGame (int code)
     {
-        playButton.GetComponent<Animation>().Play("PanelAnimation");
-        playButton.GetComponent<Animation>().Play("ButtonAnimation");
-        playButton.GetComponent<Animation>().Play("XAnimation");
-        
         switch (code)
         {
             case 8:
@@ -266,6 +236,21 @@ public class InterfaceManager : MonoBehaviour
                 OpenPlayMenu();
                 break;
         }
+    }
+
+    private int EndGame( bool flag)
+    {
+        int value = 0;
+
+        for (int i = 0; i < VaseManager.instance.vases.Count; i++)
+        {
+            if (VaseManager.instance.vases[i].isFounded == flag)
+            {
+                value++;
+            }
+        }
+
+        return value;
     }
 
 }
